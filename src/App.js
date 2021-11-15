@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import react from "react";
+import Submitform from "./submitform";
+class App extends react.Component {
+  render() {
+    const { store } = this.props;
+    // console.log(store);
+    return (
+      <div>
+        <h1>Welcome to whore house (abhay randi)</h1>
+        <Submitform store={store} />
+      </div>
+    );
+  }
 }
-
 export default App;
