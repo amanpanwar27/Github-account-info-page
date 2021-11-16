@@ -2,7 +2,7 @@ import React from "react";
 import { sendusername, handleapi } from "./actions/index";
 import { Form, Input, Button, Checkbox } from "antd";
 
-class submitform extends React.Component{
+class submitform extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,51 +32,28 @@ class submitform extends React.Component{
   };
   render() {
     return (
-      <div>
-        <Form
-          name="basic"
-          labelCol={{
-            span: 8,
-          }}
-          wrapperCol={{
-            span: 16,
-          }}
-          initialValues={{
-            remember: true,
-          }}
-        >
-          <Form.Item
-            label="Username"
-            name="username"
-            rules={[
-              {
-                required: true,
-                message: "Please input your username!",
-              },
-            ]}
-          >
-            <Input
-              onChange={(e) => {
-                this.usernamehandler(e);
-              }}
-            />
-          </Form.Item>
-
-          <Form.Item
-            wrapperCol={{
-              offset: 8,
-              span: 16,
+      <div className="submit-form">
+        <div className="searchBar">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+            className="logo"
+          />
+          <input
+            className="searchBar"
+            type="text"
+            placeholder="Enter Your Github Username .."
+            onChange={(e) => {
+              this.usernamehandler(e);
             }}
+          />
+          <button
+            type="button"
+            class="submitButton"
+            onClick={this.clickhandler}
           >
-            <Button
-              type="primary"
-              htmlType="submit"
-              onClick={this.clickhandler}
-            >
-              Submit
-            </Button>
-          </Form.Item>
-        </Form>
+            SUBMIT
+          </button>
+        </div>
       </div>
     );
   }
