@@ -14,7 +14,7 @@ class App extends react.Component {
         <Profile />
       </Route>
         <Route exact path="/">
-          <div className="body">
+          <div className="homepageBody">
              <img className="banner" src={logo} />
             <Submitform store={store} />
           </div>
