@@ -6,12 +6,11 @@ import Profile from "./profile";
 class App extends react.Component {
   render() {
     const { store } = this.props;
-    // console.log(store);
     return (
       <Router>
       <Switch>
       <Route path="/profile">
-        <Profile />
+        <Profile store = {store}/>
       </Route>
         <Route exact path="/">
           <div className="homepageBody">

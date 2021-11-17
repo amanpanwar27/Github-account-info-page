@@ -19,7 +19,7 @@ input {
   border: none;
   background-color: lightgreen;
   z-index: 5;
-  margin-left: 86.2%;
+  margin-left: 200%;
   position: relative;
   font-family: sans-serif;
   border-radius: 5px;
@@ -88,4 +88,8 @@ body {
 .site-card-wrapper
 {
   margin-left: 22%;
+}
+.recentActivity{
+  overflow-y: scroll;
+  height:  500px;
 }

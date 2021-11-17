@@ -1,7 +1,6 @@
 import React from "react";
 import { sendusername, handleapi } from "./actions/index";
-import { Form, Input, Button, Checkbox } from "antd";
-
+import { Link } from "react-router-dom";
 class submitform extends React.Component {
   constructor(props) {
     super(props);
@@ -14,21 +13,15 @@ class submitform extends React.Component {
       username: e.target.value,
     });
     console.log(this.state.username);
-    // this.props.store.subscribe(() => {
-    //   console.log("subscribed sucessfully");
-    // });
-    // this.forceUpdate();
   };
   clickhandler = () => {
-    console.log(this.props);
-
-    this.props.store.dispatch(sendusername(this.state.username));
-    const username = this.props.store.getState().username;
+    const username = this.state.username;
+    handleapi(username, this.props.store.dispatch);
     this.props.store.subscribe(() => {
-      console.log("hey there");
+      console.log("subscribed sucessfully");
+      console.log(this.props.store.getState());
+      this.forceUpdate();
     });
-    console.log(username);
-    handleapi(username);
   };
   render() {
     return (
@@ -46,13 +39,15 @@ class submitform extends React.Component {
               this.usernamehandler(e);
             }}
           />
-          <button
-            type="button"
-            class="submitButton"
-            onClick={this.clickhandler}
-          >
-            SUBMIT
-          </button>
+          <Link to = '/profile'>
+            <button
+              type="button"
+              className="submitButton"
+              onClick={this.clickhandler}
+            >
+              SUBMIT
+            </button>
+          </Link>
         </div>
       </div>
     );
